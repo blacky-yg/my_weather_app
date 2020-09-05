@@ -3,9 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+        <title>Weather App</title>
     </head>
     <body>
-        
+        <div id="search-container">
+            <input type="text" placeholder="Enter a city name or a zip code" id="search-input">
+            <button class="search-control" id="search-btn">Search</button>
+        </div>
+        <div id="weather-container">
+            <div id=weather-description>
+                <h1 id="city-name"></h1>
+                <div id="weather-main">
+                    <div id="temperature"> </div>
+                    <div id="weather-desc-header"></div>
+                    <div><img id="doc-icon"></div>
+                </div>
+                <hr>
+                <div id="wind-speed" class="bottom-details"></div>
+                <div id="humidity" class="bottom-details"></div>
+            </div>
+        </div>
+        <script src="script/index.js"></script>
     </body>
 </html>

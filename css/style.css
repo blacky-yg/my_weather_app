@@ -1,0 +1,42 @@
+body {
+    background-position: center center;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+
+#weather-container {
+    background-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 1px 5px black;
+    padding: 50px;
+    border-radius: 10px;
+    position: absolute;
+    visibility: hidden;
+}
+
+#weather-container h1 {
+    margin: 5px;
+    font-size: 42px;
+}
+
+#search-container {
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#search-container input {
+    width: 200px;
+}
+
+#search-container button {
+    background-color: rgb(1, 159, 198);
+    width: 75px;
+}
+
+.searchControl {
+    box-shadow: 2px 2px 5px black;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+}
