@@ -5,11 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="manifest" href="/manifest.webmanifest">
         <title>Weather App</title>
     </head>
     <body>
-        <div id="root">
-            <main class="app">
+        <div>
+            <main>
                 <div class="search-box" id="search-container">
                     <input type="text" id="search-input" class="search-bar" placeholder="Enter a city name or a zip code"/>
                     <button class="search-control btn-success" id="search-btn">Search</button>
@@ -19,8 +20,8 @@
                         <div class="location" id="location"></div>
                     </div>
                     <div class="weather-box">
-                        <div class="temp" id="temp"></div>
                         <div><img id="icon"></div>
+                        <div class="temp" id="temp"></div>
                         <div id="weather-desc-header"></div>
                         <div class="weather"></div>
                         <div id="wind-speed" class="bottom-details"></div>

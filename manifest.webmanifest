@@ -1,0 +1,21 @@
+{
+    "short_name": "My Weather App",
+    "name": "Weather: Do I need an umbrella?",
+    "description": "Weather forecast information",
+    "theme_color": "#c6acee",
+    "background_color": "red",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/icon.jpg",
+            "sizes": "48*48",
+            "type": "image/jpg"
+        },
+        {
+            "src": "images/",
+            "sizes": "48*48",
+            "type": "image/jpg"
+        }
+    ]
+}

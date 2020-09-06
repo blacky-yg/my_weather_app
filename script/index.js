@@ -55,3 +55,13 @@ function setPosition() {
     weatherContainer.style.top = `calc(50% - ${weatherContainerWidth/1.3}px)`
     weatherContainer.style.visibility = 'visible'
 }
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js")
+        .then(serviceWorker => {
+            console.log("Service Worker registered: ", serviceWorker);
+        })
+        .catch(error => {
+            console.error("Error registering the Service Worker: ", error);
+        });
+}
