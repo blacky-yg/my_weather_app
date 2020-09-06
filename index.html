@@ -3,26 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <title>Weather App</title>
     </head>
     <body>
-        <div id="search-container">
-            <input type="text" placeholder="Enter a city name or a zip code" id="search-input">
-            <button class="search-control" id="search-btn">Search</button>
-        </div>
-        <div id="weather-container">
-            <div id=weather-description>
-                <h1 id="city-name"></h1>
-                <div id="weather-main">
-                    <div id="temperature"> </div>
-                    <div id="weather-desc-header"></div>
-                    <div><img id="doc-icon"></div>
+        <div id="root">
+            <main class="app">
+                <div class="search-box" id="search-container">
+                    <input type="text" id="search-input" class="search-bar" placeholder="Enter a city name or a zip code"/>
+                    <button class="search-control btn-success" id="search-btn">Search</button>
                 </div>
-                <hr>
-                <div id="wind-speed" class="bottom-details"></div>
-                <div id="humidity" class="bottom-details"></div>
-            </div>
+                <div id="weather-container">
+                    <div class="location-box">
+                        <div class="location" id="location"></div>
+                    </div>
+                    <div class="weather-box">
+                        <div class="temp" id="temp"></div>
+                        <div><img id="icon"></div>
+                        <div id="weather-desc-header"></div>
+                        <div class="weather"></div>
+                        <div id="wind-speed" class="bottom-details"></div>
+                        <div id="humidity" class="bottom-details"></div>
+                    </div>
+                </div>
+            </main>
         </div>
         <script src="script/index.js"></script>
     </body>
