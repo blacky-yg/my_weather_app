@@ -4,11 +4,13 @@ const api = {
     method: ''
 }
 
-document.getElementById('search-btn').addEventListener('click', () => {
-    let search = document.getElementById('search-input').value
-    if (search)
-        searchWeather(search)
-})
+const searchBox = document.getElementById('search-input')
+searchBox.addEventListener('keypress', enter)
+
+function enter(event) {
+    if (event.keyCode == 13)
+        searchWeather(searchBox.value)
+}
 
 function getMethod(location) {
     if (location.length === 5 && Number.parseInt(location) + '' === location)
@@ -19,7 +21,7 @@ function getMethod(location) {
 
 function searchWeather(location) {
     getMethod(location)
-    fetch(`${api.base}weather?${api.method}=${location}&APPID=${api.key}&units=imperial`).then(result => {
+    fetch(`${api.base}weather?${api.method}=${location}&APPID=${api.key}&units=metric`).then(result => {
         return result.json()
     }).then(result => {
         setWeather(result)
@@ -35,10 +37,6 @@ function setWeather(ServerResult) {
     let weatherIcon = document.getElementById('icon')
     let resultDescription = ServerResult.weather[0].description
 
-    if (ServerResult.weather[0].main.temp > 16)
-        document.body.style.backgroundImage = 'url("../images/cold-bg.jpg")'
-    else
-        document.body.style.backgroundImage = 'url("../images/warm-bg.jpg")'
     weatherDescription.innerText = resultDescription.charAt(0).toUpperCase() + resultDescription.slice(1)
     temp.innerHTML = Math.floor(ServerResult.main.temp) + '&#176'
     humidity.innerHTML = 'Humidity Level at ' + ServerResult.main.humidity + '%'
@@ -56,12 +54,10 @@ function setPosition() {
     weatherContainer.style.visibility = 'visible'
 }
 
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js")
-        .then(serviceWorker => {
-            console.log("Service Worker registered: ", serviceWorker);
+if ('serviceworker', navigator) {
+    navigator.serviceWorker.register('../sw.js').then(registration => {
+            console.log(registration);
+        }).catch(error => {
+            console.log(error);
         })
-        .catch(error => {
-            console.error("Error registering the Service Worker: ", error);
-        });
 }
