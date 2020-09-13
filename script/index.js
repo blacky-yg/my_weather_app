@@ -3,8 +3,9 @@ const api = {
     base: "https://api.openweathermap.org/data/2.5/",
     method: ''
 }
-
+const WeatherData = JSON.parse(localStorage.getItem("weatherData")) || []
 const searchBox = document.getElementById('search-input')
+
 searchBox.addEventListener('keypress', enter)
 
 function enter(event) {
@@ -21,11 +22,13 @@ function getMethod(location) {
 
 function searchWeather(location) {
     getMethod(location)
-    fetch(`${api.base}weather?${api.method}=${location}&APPID=${api.key}&units=metric`).then(result => {
-        return result.json()
-    }).then(result => {
-        setWeather(result)
-    })
+    fetch(`${api.base}weather?${api.method}=${location}&APPID=${api.key}&units=metric`)
+        .then(response => response.json())
+        .then((data) => {
+            WeatherData.push(data)
+            setWeather(data)
+            localStorage.setItem('weatherData', JSON.stringify(WeatherData))
+        })
 }
 
 function setWeather(ServerResult) {

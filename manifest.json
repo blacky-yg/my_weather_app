@@ -1,9 +1,9 @@
 {
-    "short_name": "My Weather App",
-    "name": "Weather: Do I need an umbrella?",
+    "short_name": "PWeatherA",
+    "name": "Progressive Wheather App",
     "description": "Weather forecast information",
     "theme_color": "#c6acee",
-    "background_color": "red",
+    "background_color": "silver",
     "start_url": ".",
     "display": "standalone",
     "icons": [
