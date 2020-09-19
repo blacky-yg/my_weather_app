@@ -6,7 +6,11 @@ self.addEventListener("install", (event) => {
                 return cache.addAll(["./", "script/index.js", "index.html", "/css/style.css", "/images/logo192.png"])
             })
     )
-});
+})
+
+self.addEventListener("activate", (event) => {
+    console.log('Service Worker: Installed')
+})
 
 self.addEventListener("fetch", (event) => {
     event.respondWith(
@@ -15,4 +19,4 @@ self.addEventListener("fetch", (event) => {
                 return response || fetch(event.request)
             })
     )
-});
+})
